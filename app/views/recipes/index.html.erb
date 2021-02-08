@@ -1,6 +1,6 @@
 <h1>Recipes</h1>
 
-<% @recipes.each do |recipe| %>
+<% @recipes_no_of_ingredients_order.each do |recipe| %>
     <div class="recipe">
         <h4 class="recipe-name"><%= recipe.name %></h4>
         <p class="ingredient-count"><%= "No. of Ingredients: #{recipe.ingredients.count}" %></p>
