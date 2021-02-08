@@ -1,5 +1,19 @@
 <h1>New Recipe</h1>
 
+<%= form_with model: @recipe do |form| %>
+
+    <%= form.label :name, "Recipe Name:" %>
+    <%= form.text_field :name %>
+
+    <%= form.label :ingredients %>
+    <%= form.collection_check_boxes :ingredient_id, Ingredient.order(:name), :id, :name %>
+
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.order(:username), :id, :username %>
+
+    <%= form.submit %>
+<% end %>
+
 <div class="nav-bar botton-nav">
     <%= link_to "Home", '/' %>
     <%= link_to "Recipes", recipes_path %>
