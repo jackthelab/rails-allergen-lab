@@ -2,14 +2,20 @@
 
 <%= form_with model: @recipe do |form| %>
 
-    <%= form.label :name, "Recipe Name:" %>
-    <%= form.text_field :name %>
+    <div class="form-field">
+        <%= form.label :name, "Recipe Name:" %>
+        <%= form.text_field :name %>
+    </div>
 
-    <%= form.label :ingredients %>
-    <%= form.collection_check_boxes :ingredient_id, Ingredient.order(:name), :id, :name %>
+    <div class="form-field">
+        <%= form.label :ingredients %>
+        <%= form.collection_check_boxes :ingredients, Ingredient.order(:name), :id, :name %>
+    </div>
 
-    <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.order(:username), :id, :username %>
+    <div class="form-field">
+        <%= form.label :user_id %>
+        <%= form.collection_select :user_id, User.order(:username), :id, :username %>
+    </div>
 
     <%= form.submit %>
 <% end %>
