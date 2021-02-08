@@ -1,17 +1,11 @@
 class IngredientsController < ApplicationController
+
   def index
+    @ingredients = Ingredient.all
   end
 
   def show
-  end
-
-  def new
-  end
-
-  def ingredients_params
-  end
-
-  def create
+    @ingredient = Ingredient.find_by(id: params[:id])
   end
   
 end

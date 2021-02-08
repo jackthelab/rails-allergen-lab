@@ -1,8 +1,6 @@
 class RecipesController < ApplicationController
-    def index
-    end
 
-    def show
+    def index
     end
 
     def new
