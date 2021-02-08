@@ -1,5 +1,14 @@
 <h1>Ingredients</h1>
 
+<div class="ingredient-list">
+<% @ingredients_by_allergies.each do |ingredient| %>
+    <div class="ingredient-item">
+        <h3 class="ingredient-name"><%= ingredient.name %></h3>
+        <p class="ingredient-count"><%= "No. of users allergic: #{ingredient.allergy_count}" %></p>
+    </div>
+<% end %>
+</div>
+
 
 <div class="nav-bar botton-nav">
     <%= link_to "Home", '/' %>
