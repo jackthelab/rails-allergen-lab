@@ -11,4 +11,9 @@ class Ingredient < ApplicationRecord
     def self.ordered_by_users_allergic
         Ingredient.all.sort_by { |ingredient| ingredient.allergy_count }.reverse
     end
+
+    def recipes_used
+        self.additions.map { |addition| Recipe.find_by(id: addition.recipe_id) }
+    end
+
 end
