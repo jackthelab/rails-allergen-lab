@@ -2,12 +2,13 @@
 
 <div class="recipes-list">
 <h2>Recipes List</h2>
+<ul>
 <% @recipes_in.each do |recipe| %>
-    <div class="recipe-item">
-        <h3><%= recipe.name %></h3>
-        <p><%= "From: #{recipe.user.username}" %></p>
-    </div>
+    <li class="recipe-item">
+        <%= "#{recipe.name}, by: #{recipe.user.username}" %>
+    </li>
 <% end %>
+</ul>
 
 <div class="nav-bar botton-nav">
     <%= link_to "Home", '/' %>

@@ -4,6 +4,8 @@ class Ingredient < ApplicationRecord
     has_many :allergies
     has_many :users, through: :allergies
 
+    validates :name, presence: true
+
     def allergy_count
         Allergy.where(ingredient_id: self.id).count
     end

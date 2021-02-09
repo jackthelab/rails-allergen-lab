@@ -3,6 +3,9 @@ class Recipe < ApplicationRecord
     has_many :additions
     has_many :ingredients, through: :additions
 
+    validates :name, presence: true
+    validates :user_id, numericality: { only_integer: true }
+
     def num_of_ingredients
         self.ingredients.count
     end

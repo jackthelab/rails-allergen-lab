@@ -1,13 +1,19 @@
 <h1><%= @user.username %></h1>
 
 <h2>Recipes</h2>
+<ul class="recipes-list">
 <% @user.recipes.each do |recipe| %>
-    <%= recipe.name %>
+   <li class="recipe"><%= recipe.name %></li>
 <% end %>
+</ul>
 
 <h2>Allergies List</h2>
 <% if @user.allergy_ingredients.count > 0 %>
-    <p><%= @user.allergy_ingredients.join(", ") %></p>
+    <ul>
+        <% @user.allergy_ingredients.each do |a_i| %>
+            <li><%= a_i %></li>
+        <% end %>
+    </ul>
 <% else %>
     <p>This user has no documented allergies</p>
 <% end %>
